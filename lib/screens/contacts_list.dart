@@ -1,3 +1,4 @@
+import 'package:database_bytebank/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 
 class ContactsList extends StatelessWidget {
@@ -15,14 +16,27 @@ class ContactsList extends StatelessWidget {
                 'Nome',
                 style: TextStyle(fontSize: 24.0),
               ),
-              subtitle: Text('Número da Conta', style: TextStyle(fontSize: 16.0),),
+              subtitle: Text(
+                'Número da Conta',
+                style: TextStyle(fontSize: 16.0),
+              ),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute(
+                  builder: (context) => ContactForm(),
+                ),
+              )
+              .then(
+                (newContact) => debugPrint(newContact.toString()),
+              );
+        },
       ),
     );
   }
