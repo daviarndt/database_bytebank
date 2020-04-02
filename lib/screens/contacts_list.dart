@@ -3,7 +3,12 @@ import 'package:database_bytebank/models/contact.dart';
 import 'package:database_bytebank/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 
-class ContactsList extends StatelessWidget {
+class ContactsList extends StatefulWidget {
+  @override
+  _ContactsListState createState() => _ContactsListState();
+}
+
+class _ContactsListState extends State<ContactsList> {
   final ContactDao _contactDao = ContactDao();
 
   @override
