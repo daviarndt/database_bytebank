@@ -37,7 +37,7 @@ class ContactDao {
     for (Map<String, dynamic> row in result) {
       final Contact contact = Contact(
         row[_id],
-        row[_id],
+        row[_name],
         row[_accountNumber],
       );
       contacts.add(contact);
